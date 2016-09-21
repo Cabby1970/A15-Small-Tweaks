@@ -22,7 +22,6 @@
 				<sprite depth="4" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="32,32" pos="8,-6" foregroundlayer="true"/>
 				<label depth="6" name="TextContent" pos="0,-8" font_size="28" color="[white]" justify="center" pivot="topleft" text="{statcurrentwithmax}" height="30"/>
 			</rect>
-		</grid>
       <!-- added food display, next 4 lines -->
       <panel height="30" width="340" disableautobackground="true">
         <sprite depth="1" name="windowIcon" style="icon22px" pos="2,-11" sprite="ui_game_symbol_fork" color="[white_quarter_alpha]"/>
