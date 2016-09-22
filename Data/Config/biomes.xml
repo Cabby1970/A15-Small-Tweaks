@@ -974,7 +974,7 @@ If you do not declare them, the decorations of the main biome are used.
 
 
 	<!-- Wasteland Main Biome -->
-	<biome name="wasteland" biomemapcolor="#A0A0A0" >
+	<biome name="wasteland" biomemapcolor="#778899" >
 		<weather>
 			<Temperature min="-40" max="40" prob="1"/>
 			<Fog min="0" max="0" prob=".8"/>
