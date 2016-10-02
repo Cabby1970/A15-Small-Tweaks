@@ -680,7 +680,7 @@ If you do not declare them, the decorations of the main biome are used.
 				<decoration type="block" blockname="treeDesertShrub" prob="0.1"/>
 				<decoration type="block" blockname="plantedGoldenrod3Harvest" prob="0.02"/>
 				<decoration type="block" blockname="plantedCotton3Harvest" prob="0.03"/>
-				<decoration type="block" blockname="plantedCornTop2" prob=".009"/>
+				<decoration type="block" blockname="plantedCorn3Harvest" prob=".009"/>
 				<decoration type="block" blockname="lootPlains" prob="0.00025"/>
 				<decoration type="block" blockname="treePlainsGrassDiagonal" prob =".5" />
 			</decorations>
@@ -787,24 +787,14 @@ If you do not declare them, the decorations of the main biome are used.
 		<subbiome prob="0.09">
 			<layers>
 				<layer depth="1" blockname="desertGround" />
-				<layer depth="22" blockname="sandStone" />
-				<layer depth="2" blockname="sandStone" > <resource blockname="gravel" cluster="1" prob="0.811" rwgGenerationType="all" /> </layer>
-				<layer depth="*" blockname="stone" >
-					<resource blockname="oilDeposit" cluster="1" prob="0.1130" rwgGenerationType="all" />
-					<resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" />
-					<resource blockname="silverOre"  cluster="1" prob="0.00020" rwgGenerationType="all" />
-					<resource blockname="goldOre"    cluster="1" prob="0.00010" rwgGenerationType="all" />
-					<resource blockname="diamondOre" cluster="1" prob="0.00005" rwgGenerationType="all" />
-				</layer>
-				<layer depth="1" blockname="stone" > <resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" /> </layer>
-				<layer depth="5" blockname="stone" >
+				<layer depth="23" blockname="sandStone" />
+				<layer depth="*" blockname="sandStone" >
 					<resource blockname="ironOre" cluster="1" prob="0.1130" rwgGenerationType="all" />
-					<resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" />
+					<resource blockname="oilDeposit" cluster="1" prob="0.1130" rwgGenerationType="all" />
 					<resource blockname="silverOre"  cluster="1" prob="0.00020" rwgGenerationType="all" />
 					<resource blockname="goldOre"    cluster="1" prob="0.00010" rwgGenerationType="all" />
 					<resource blockname="diamondOre" cluster="1" prob="0.00005" rwgGenerationType="all" />
 				</layer>
-				<layer depth="1" blockname="stone" > <resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" /> </layer>
 				<layer depth="3" blockname="bedrock" />
 			</layers>
 			<decorations>
@@ -829,24 +819,14 @@ If you do not declare them, the decorations of the main biome are used.
 		<subbiome prob="0.04">
 			<layers>
 				<layer depth="5" blockname="clayInSandstone" />
-				<layer depth="17" blockname="sandStone" />
-				<layer depth="2" blockname="sandStone" > <resource blockname="gravel" cluster="1" prob="0.811" rwgGenerationType="all" /> </layer>
-				<layer depth="*" blockname="stone" >
-					<resource blockname="oilDeposit" cluster="1" prob="0.1130" rwgGenerationType="all" />
-					<resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" />
-					<resource blockname="silverOre"  cluster="1" prob="0.00020" rwgGenerationType="all" />
-					<resource blockname="goldOre"    cluster="1" prob="0.00010" rwgGenerationType="all" />
-					<resource blockname="diamondOre" cluster="1" prob="0.00005" rwgGenerationType="all" />
-				</layer>
-				<layer depth="1" blockname="stone" > <resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" /> </layer>
-				<layer depth="5" blockname="stone" >
+				<layer depth="19" blockname="sandStone" />
+				<layer depth="*" blockname="sandStone" >
 					<resource blockname="ironOre" cluster="1" prob="0.1130" rwgGenerationType="all" />
-					<resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" />
+					<resource blockname="oilDeposit" cluster="1" prob="0.1130" rwgGenerationType="all" />
 					<resource blockname="silverOre"  cluster="1" prob="0.00020" rwgGenerationType="all" />
 					<resource blockname="goldOre"    cluster="1" prob="0.00010" rwgGenerationType="all" />
 					<resource blockname="diamondOre" cluster="1" prob="0.00005" rwgGenerationType="all" />
 				</layer>
-				<layer depth="1" blockname="stone" > <resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" /> </layer>
 				<layer depth="3" blockname="bedrock" />
 			</layers>
 			<decorations>
@@ -864,27 +844,14 @@ If you do not declare them, the decorations of the main biome are used.
 		<subbiome prob="0.1551"> <!-- Ore Sub Biome: leadOre -->
 			<layers>
 				<layer depth="1" blockname="desertGround" /> <layer depth="22" blockname="sandStone" />
-				<layer depth="1" blockname="stone" > <resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" /> </layer>
-				<layer depth="*" blockname="stone" > <resource blockname="leadOre" cluster="1" prob="0.1030" rwgGenerationType="all" /> <resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" /> </layer>
-				<layer depth="1" blockname="stone" > <resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" /> </layer>
-				<layer depth="3" blockname="bedrock" />
-			</layers>
-		</subbiome>
-		<subbiome prob="0.1551"> <!-- Ore Sub Biome: ironOre -->
-			<layers>
-				<layer depth="1" blockname="desertGround" /> <layer depth="22" blockname="sandStone" />
-				<layer depth="1" blockname="stone" > <resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" /> </layer>
-				<layer depth="*" blockname="stone" > <resource blockname="ironOre" cluster="1" prob="0.1030" rwgGenerationType="all" /> <resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" /> </layer>
-				<layer depth="1" blockname="stone" > <resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" /> </layer>
+				<layer depth="*" blockname="sandStone" > <resource blockname="leadOre" cluster="1" prob="0.1030" rwgGenerationType="all" /> </layer>
 				<layer depth="3" blockname="bedrock" />
 			</layers>
 		</subbiome>
 		<subbiome prob="0.1551"> <!-- Ore Sub Biome: potassiumNitrate -->
 			<layers>
 				<layer depth="1" blockname="desertGround" /> <layer depth="22" blockname="sandStone" />
-				<layer depth="1" blockname="stone" > <resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" /> </layer>
-				<layer depth="*" blockname="stone" > <resource blockname="potassiumNitrate" cluster="1" prob="0.1030" rwgGenerationType="all" /> <resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" /> </layer>
-				<layer depth="1" blockname="stone" > <resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" /> </layer>
+				<layer depth="*" blockname="sandStone" > <resource blockname="potassiumNitrate" cluster="1" prob="0.1030" rwgGenerationType="all" /> </layer>
 				<layer depth="3" blockname="bedrock" />
 			</layers>
 		</subbiome>
@@ -894,23 +861,13 @@ If you do not declare them, the decorations of the main biome are used.
 			<layer filluptorg="60" blockname="water" />
 			<layer depth="1" blockname="desertGround" />
 			<layer depth="22" blockname="sandStone" />
-			<layer depth="2" blockname="sandStone" > <resource blockname="gravel" cluster="1" prob="0.811" rwgGenerationType="all" /> </layer>
-			<layer depth="*" blockname="stone" >
-				<resource blockname="oilDeposit" cluster="1" prob="0.1130" rwgGenerationType="all" />
-				<resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" />
-				<resource blockname="silverOre"  cluster="1" prob="0.00020" rwgGenerationType="all" />
-				<resource blockname="goldOre"    cluster="1" prob="0.00010" rwgGenerationType="all" />
-				<resource blockname="diamondOre" cluster="1" prob="0.00005" rwgGenerationType="all" />
-			</layer>
-			<layer depth="1" blockname="stone" > <resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" /> </layer>
-			<layer depth="5" blockname="stone" >
+			<layer depth="*" blockname="sandStone" >
 				<resource blockname="ironOre" cluster="1" prob="0.1130" rwgGenerationType="all" />
-				<resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" />
+				<resource blockname="oilDeposit" cluster="1" prob="0.1130" rwgGenerationType="all" />
 				<resource blockname="silverOre"  cluster="1" prob="0.00020" rwgGenerationType="all" />
 				<resource blockname="goldOre"    cluster="1" prob="0.00010" rwgGenerationType="all" />
 				<resource blockname="diamondOre" cluster="1" prob="0.00005" rwgGenerationType="all" />
 			</layer>
-			<layer depth="1" blockname="stone" > <resource blockname="gravel" cluster="1" prob="0.8130" rwgGenerationType="all" /> </layer>
 			<layer depth="3" blockname="bedrock" />
 		</layers>
 		<decorations>

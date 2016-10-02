@@ -372,11 +372,8 @@ Forge weight: We have auto-scaling based on resources IF there is a recipe for t
 	<property name="Mesh" value="terrain" />
 	<property name="Texture" value="96" />
 	<property name="DropScale" value="2" />
-	<drop event="Harvest" name="silverNugget" count="1" prob="1"/>
-	<drop event="Harvest" name="silverNugget" count="2" prob="0.5" />
-	<drop event="Harvest" name="silverNugget" count="3" prob="0.2" />
-	<drop event="Destroy" count="0" />
-	<drop event="Fall" name="destroyedStone" count="1" prob=".75" stick_chance="1" />
+	<drop event="Destroy" name="silverNugget" count="1,5" />
+	<drop event="Fall" name="silverOre" stick_chance="1" />
 	<property name="CanMobsSpawnOn" value="true" />
 </block>
 
@@ -476,18 +473,10 @@ Forge weight: We have auto-scaling based on resources IF there is a recipe for t
 </block>
 
 <block id="29" name="goldOre">
+	<property name="Extends" value="silverOre" />
 	<property name="CustomIcon" value="silverOre" />
-	<property name="Material" value="Mmetal_medium" />
-	<property name="Shape" value="Terrain" />
-	<property name="Mesh" value="terrain" />
-	<property name="Texture" value="96" />
-	<property name="DropScale" value="2" />
-	<drop event="Harvest" name="goldNugget" count="1" prob="1"/>
-	<drop event="Harvest" name="goldNugget" count="2" prob="0.4" />
-	<drop event="Harvest" name="goldNugget" count="3" prob="0.15" />
-	<drop event="Destroy" count="0" />
-	<drop event="Fall" name="destroyedStone" count="1" prob=".75" stick_chance="1" />
-	<property name="CanMobsSpawnOn" value="true" />
+	<drop event="Destroy" name="goldNugget" count="1,4" />
+	<drop event="Fall" name="goldOre" stick_chance="1" />
 </block>
 
 <block id="30" name="sod">
@@ -558,18 +547,10 @@ Forge weight: We have auto-scaling based on resources IF there is a recipe for t
 </block>
 
 <block id="34" name="diamondOre">
+	<property name="Extends" value="silverOre" />
 	<property name="CustomIcon" value="silverOre" />
-	<property name="Material" value="Mmetal_medium" />
-	<property name="Shape" value="Terrain" />
-	<property name="Mesh" value="terrain" />
-	<property name="Texture" value="96" />
-	<property name="DropScale" value="2" />
-	<drop event="Harvest" name="rawDiamond" count="1" prob="1"/>
-	<drop event="Harvest" name="rawDiamond" count="2" prob="0.3" />
-	<drop event="Harvest" name="rawDiamond" count="3" prob="0.1" />
-	<drop event="Destroy" count="0" />
-	<drop event="Fall" name="destroyedStone" count="1" prob=".75" stick_chance="1" />
-	<property name="CanMobsSpawnOn" value="true" />
+	<drop event="Destroy" name="rawDiamond" count="1,3" />
+	<drop event="Fall" name="diamondOre" stick_chance="1" />
 </block>
 
 <block id="35" name="fertilizedFarmland">
@@ -3415,7 +3396,7 @@ group desc for stuff like metal siding
 	<property name="EconomicValue" value="160" />
 </block>
 
-<block id="408" name="trapSpikesNew">
+<block id="408" name="trapSpikesNew"> <!-- 6 stages total -->
 	<property name="Class" value="TrunkTip" />
 	<property name="Damage" value="5" />
 	<property name="Damage_received" value="10" />
@@ -3426,8 +3407,8 @@ group desc for stuff like metal siding
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
 	<property name="FuelValue" value="36" />
 	<property name="IsTerrainDecoration" value="true" />
-	<property name="BuffsWhenWalkedOn" value="trapDamage1Trigger"/>
-	<property class="RepairItems"> <property name="wood" value="3" /> </property>
+	<property name="BuffsWhenWalkedOn" value="trapDamageZombie"/>
+	<property class="RepairItems"> <property name="wood" value="16" /> </property>
 	<property name="DowngradeBlock" value="trapSpikesDamage1" />
 	<drop event="Destroy" count="0" />
 	<drop event="Fall" name="woodDebris" count="1" prob="0.75" stick_chance="1" />
@@ -3515,7 +3496,7 @@ group desc for stuff like metal siding
 <block id="418" name="woodLogSpike1"> <!-- log spike 1 wood -->
 	<property name="Class" value="TrunkTip" />
 	<property name="Damage" value="3" />
-	<property name="Damage_received" value="3.25" />
+	<property name="Damage_received" value="1.75" />
 	<property name="Material" value="wood" />
 	<property name="Shape" value="New" />
 	<property name="Model" value="cone1m" />
@@ -3650,11 +3631,11 @@ group desc for stuff like metal siding
 </block>
 
 <block id="430" name="barbedFence">
-	<property name="Class" value="Barbed" />
+	<property name="Class" value="TrunkTip" />
 	<property name="Material" value="MbarbedFence" />
 	<property name="StabilitySupport" value="false" />
-	<property name="Damage" value="2" />
-	<property name="Damage_received" value="1" />
+	<property name="Damage" value="1" />
+	<property name="Damage_received" value="1.5" />
 	<property name="Shape" value="New" />
 	<property name="Mesh" value="cutout" />
 	<property name="Model" value="trap_barbed_fence_shape" />
@@ -3663,12 +3644,13 @@ group desc for stuff like metal siding
 	<property name="Texture" value="518" />
 	<property name="RotationAllowed" value="pivotOnFloor" />
 	<property name="BuffsWhenWalkedOn" value="trapDamage1Trigger"/>
-	<property class="RepairItems"> <property name="wood" value="5" /> <property name="forgedIron" value="2" /> </property>
+	<property class="RepairItems"> <property name="wood" value="20" /> <property name="scrapIron" value="8" /> </property>
+	<drop event="Harvest" name="wood" count="8" />
+	<drop event="Harvest" name="scrapIron" count="3" />
 	<drop event="Destroy" count="0" />
-	<drop event="Destroy" name="barbedFence" count="1" tool_category="Disassemble" />
 	<property name="CanPlayersSpawnOn" value="false" />
 	<property name="Group" value="Tools/Traps" />
-	<property name="EconomicValue" value="12" />
+	<property name="EconomicValue" value="11" />
 </block>
 
 <block id="431" name="mineCandyTin">
@@ -3685,7 +3667,7 @@ group desc for stuff like metal siding
 	<property name="Explosion.RadiusBlocks" value="2" />
 	<property name="Explosion.RadiusEntities" value="3" />
 	<property name="Explosion.BlockDamage" value="10" />
-	<property name="Explosion.EntityDamage" value="75" /> <!-- Explosions do roughly 1.4 times this value in actual entity damage -->
+	<property name="Explosion.EntityDamage" value="65" /> <!-- Explosions do roughly 75% of this value in actual player damage... but players can wear armor -->
 	<property name="Explosion.DamageBonus.stone" value="0" />
 	<property name="Explosion.DamageBonus.metal" value="0" />
 	<property name="Explosion.DamageBonus.earth" value="0" />
@@ -3706,7 +3688,7 @@ group desc for stuff like metal siding
 	<property name="Explosion.RadiusBlocks" value="3" />
 	<property name="Explosion.RadiusEntities" value="4" />
 	<property name="Explosion.BlockDamage" value="15" />
-	<property name="Explosion.EntityDamage" value="130" />
+	<property name="Explosion.EntityDamage" value="260" />
 	<property name="EconomicValue" value="146" />
 </block>
 
@@ -3717,7 +3699,7 @@ group desc for stuff like metal siding
 	<property name="Explosion.RadiusBlocks" value="4" />
 	<property name="Explosion.RadiusEntities" value="5" />
 	<property name="Explosion.BlockDamage" value="20" />
-	<property name="Explosion.EntityDamage" value="260" />
+	<property name="Explosion.EntityDamage" value="700" />
 	<property name="EconomicValue" value="182" />
 </block>
 
@@ -4511,7 +4493,7 @@ kind of free
 	<property name="CustomIcon" value="plantedYucca3Harvest" />
 	<property name="Material" value="Mtallgrass" />
 	<property name="Shape" value="ModelEntity" />
-	<property name="Model" value="Entities/Plants/plant_aloe1_Prefab" />
+	<property name="Model" value="Entities/Plants/plant_yucca_sproutPrefab" />
 	<property name="MultiBlockDim" value="1,2,1" />
 	<property name="PlantGrowing.Next" value="plantedYucca2" />
 	<property name="Group" value="Food/Cooking,Medicine" />
@@ -4521,8 +4503,7 @@ kind of free
 <block id="534" name="plantedYucca2">
 	<property name="Extends" value="plantedYucca1" />
 	<property name="IsDeveloper" value="true" />
-	<property name="Model" value="Entities/Plants/plant_yuccaPrefab" />
-	<property name="ModelOffset" value="0,-.8,0" />
+	<property name="Model" value="Entities/Plants/plant_yucca_growthPrefab" />
 	<property name="PlantGrowing.Next" value="plantedYucca3Harvest" />
 </block>
 	<!-- 2 Free -->
@@ -6185,7 +6166,7 @@ kind of free
 <block id="703" name="rWoodLogSpike2"> <!-- log spike 2 rWood -->
 	<property name="Extends" value="woodLogSpike1" />
 	<property name="Damage" value="4" />
-	<property name="Damage_received" value="3.5" />
+	<property name="Damage_received" value="1.75" />
 	<property name="Texture" value="379" />
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="rWoodMetalLogSpike3" />
@@ -6200,7 +6181,7 @@ kind of free
 <block id="704" name="rWoodMetalLogSpike3"> <!-- log spike 3 wood+metal -->
 	<property name="Extends" value="rWoodLogSpike2" param1="RepairItems,wood" />
 	<property name="Damage" value="5" />
-	<property name="Damage_received" value="5" />
+	<property name="Damage_received" value="2.5" />
 	<property name="Material" value="metal" />
 	<property name="Texture" value="380" />
 	<property class="RepairItems"> <property name="scrapIron" value="20" /> </property>
@@ -7349,7 +7330,7 @@ kind of free
 	<property name="Extends" value="cropsHarvestableMaster" />
 	<property name="Material" value="Mtallgrass" />
 	<property name="Shape" value="ModelEntity" />
-	<property name="Model" value="Entities/Plants/plant_yuccaPrefab" />
+	<property name="Model" value="Entities/Plants/plant_yucca_harvestPrefab" />
 	<property name="MultiBlockDim" value="1,2,1" />
 	<property name="Collide" value="melee,movement,rocket" />
 	<drop event="Harvest" name="foodYuccaFruit" count="1" />
@@ -7744,10 +7725,10 @@ kind of free
 	<property name="DescriptionKey" value="woodArrowSlitGroupDesc"/>
 </block>
 
-<block id="900" name="plantedCorn1"> <!-- growing, stage 1, seed,    revision before corn changes: 15120 -->
+<block id="900" name="plantedCorn1"> <!-- growing, stage 1, seed -->
 	<property name="Extends" value="cropsGrowingMaster" />
 	<property name="IsDeveloper" value="true" />
-	<property name="CustomIcon" value="corn" />
+	<property name="CustomIcon" value="cornSeed" />
 	<property name="Material" value="Mtallgrass" />
 	<property name="Shape" value="New" />
 	<property name="Model" value="corn_sprout_shape" />
@@ -7756,27 +7737,26 @@ kind of free
 	<property name="Collide" value="melee" />
 	<property name="Texture" value="529" />
 	<property name="Place" value="Door" />
-	<property name="PlantGrowing.Next" value="plantedCornTop1" />
+	<property name="PlantGrowing.Next" value="plantedCorn2" />
 	<property name="Group" value="Food/Cooking,Medicine" />
 	<property name="DescriptionKey" value="cornSeedDesc"/>
 </block>
 
-<block id="901" name="plantedCornTop1"> <!-- plantedCorn2, growing, stage 2 -->
+<block id="901" name="plantedCorn2"> <!-- growing, stage 2 -->
 	<property name="Extends" value="plantedCorn1" />
 	<property name="IsDeveloper" value="true" />
-	<property name="CustomIcon" value="plantedCornTop2" />
+	<property name="CustomIcon" value="plantedCorn3Harvest" />
 	<property name="Shape" value="New" />
 	<property name="Model" value="corn_growth_shape" />
 	<property name="Mesh" value="cutoutmoveable" />
 	<property name="MultiBlockDim" value="1,3,1" />
 	<property name="Collide" value="melee" />
 	<property name="Texture" value="529" />
-	<property name="PlantGrowing.Next" value="plantedCornStalk1" />
+	<property name="PlantGrowing.Next" value="plantedCorn3Harvest" />
 </block>
 
-<block id="902" name="plantedCornTop2"> <!-- used in prefabs, harvestable / random gen corn -->
+<block id="902" name="plantedCorn3Harvest"> <!-- stage 3, harvestable / player-farmed and prefab corn -->
 	<property name="Extends" value="cropsHarvestableMaster" />
-	<property name="CustomIcon" value="plantedCornTop2" />
 	<property name="Material" value="Mtallgrass" />
 	<property name="Shape" value="New" />
 	<property name="Model" value="corn_harvest_shape" />
@@ -7785,31 +7765,23 @@ kind of free
 	<property name="Collide" value="melee" />
 	<property name="Texture" value="529" />
 	<drop event="Harvest" name="corn" count="1" />
-	<property name="CropsGrown.BonusHarvestDivisor" value="99999" />
-</block>
-
-<block id="903" name="plantedCornStalk1"> <!-- harvestable / player-farmed corn -->
-	<property name="Extends" value="plantedCornTop2" />
-	<property name="IsDeveloper" value="true" />
 	<property name="CropsGrown.BonusHarvestDivisor" value="8" />
 </block>
 
-<block id="904" name="plantedCornStalk2Legacy"> <!-- used in prefabs -->
-	<property name="Extends" value="plantedCornTop2"/>
-	<property name="IsDeveloper" value="true" />
+<block id="903" name="plantedCornDead"> <!-- dead corn for prefab use -->
+	<property name="CustomIcon" value="plantedCorn3Harvest" /> <property name="CustomIconTint" value="ffffa0" />
+	<property name="Material" value="Mtallgrass" />
+	<property name="StabilitySupport" value="false" />
+	<property name="Shape" value="New" />
+	<property name="Model" value="corn_dead_shape" />
+	<property name="Mesh" value="cutoutmoveable" />
+	<property name="MultiBlockDim" value="1,4,1" />
+	<property name="Texture" value="530" />
+	<property name="Collide" value="melee" />
+	<property name="IsTerrainDecoration" value="true" />
+	<drop event="Destroy" count="0" />
 </block>
-
-<block id="905" name="plantedCornTop3HarvestLegacy"> <!-- not used in prefabs. The old harvestable "corn top". Redundant but kept for savegame compatibility. -->
-	<property name="IsDeveloper" value="true" />
-	<property name="Material" value="air" />
-	<property name="Shape" value="Invisible" />
-	<property name="Texture" value="250" />
-</block>
-
-<block id="906" name="grownUpCornTop2Legacy"> <!-- not used in prefabs -->
-	<property name="Extends" value="plantedCornTop2"/>
-	<property name="IsDeveloper" value="true" />
-</block>
+	<!-- 3 Free -->
 
 <block id="907" name="painting02">
 	<property name="Material" value="glass" />
@@ -8995,8 +8967,8 @@ kind of free
 
 <block id="1095" name="barbedWireSheet">
 	<property name="Class" value="Damage" />
-	<property name="Damage" value="2" />
-	<property name="Damage_received" value="1" />
+	<property name="Damage" value="1" />
+	<property name="Damage_received" value=".75" />
 	<property name="Material" value="MbarbedWire" />
 	<property name="Shape" value="BillboardSingleOnWall" />
 	<property name="Place" value="TowardsPlacerInverted" />
@@ -9006,10 +8978,10 @@ kind of free
 	<property name="ShapeMinBB" value="0.3,0,0.3" />
 	<property name="Group" value="Tools/Traps" />
 	<property name="BuffsWhenWalkedOn" value="trapDamage1Trigger"/>
-	<property class="RepairItems"> <property name="forgedIron" value="2" /> </property>
-	<drop event="Destroy" name="scrapIron" count="1,15" prob="1" />
+	<property class="RepairItems"> <property name="scrapIron" value="15" /> </property>
+	<drop event="Destroy" name="scrapIron" count="1,12" prob="1" />
 	<drop event="Fall" name="scrapMetalPile" count="1" prob=".75" stick_chance="1" />
-	<property name="EconomicValue" value="12" />
+	<property name="EconomicValue" value="15" />
 </block>
 
 <block id="1096" name="cable1">
@@ -11405,17 +11377,7 @@ kind of free
 	<property name="RotationAllowed" value="pivotOnFloor" />
 	<property name="Collide" value="movement,melee,rocket" /> <!-- -rocket -->
 </block>
-
-<block id="1423" name="scrapIronLogSpikeFrame"> <!-- log spike scrap frame -->
-	<property name="Extends" value="scrapIronFrameMaster" />
-	<!-- <property name="Shape" value="ConeCutoutBackFaces" /> needed -->
-	<property name="Shape" value="New" />
-	<property name="Model" value="cone1m" />
-	<property name="CanPickup" value="false" />
-	<property class="UpgradeBlock"> <property name="ToBlock" value="scrapIronLogSpike4" /> </property>
-	<property name="Group" value="Tools/Traps" />
-	<property name="DescriptionKey" value="woodLogSpike1Desc"/>
-</block>
+	<!-- 1 Free -->
 
 <block id="1424" name="steelStairs25">
 	<property name="Extends" value="steelMaster" />
@@ -11576,9 +11538,9 @@ kind of free
 </block>
 
 <block id="1432" name="scrapIronLogSpike4"> <!-- log spike 4 scrap -->
-	<property name="Extends" value="rWoodMetalLogSpike3" />
+	<property name="Extends" value="rWoodMetalLogSpike3" param1="DowngradeBlock" />
 	<property name="Damage" value="6" />
-	<property name="Damage_received" value="4.25" />
+	<property name="Damage_received" value="2.25" />
 	<property name="Material" value="Mmetal_medium" />
 	<property name="Texture" value="307" />
 	<property class="RepairItems"> <property name="scrapIron" value="40" /> </property>
@@ -11586,7 +11548,6 @@ kind of free
 		<property name="ToBlock" value="rScrapIronLogSpike5" />
 		<property name="ItemCount" value="40" />
 	</property>
-	<property name="DowngradeBlock" value="scrapIronLogSpikeFrame" />
 	<drop event="Destroy" name="scrapIron" count="15" />
 	<drop event="Fall" name="scrapMetalPile" count="1" prob=".75" stick_chance="1" />
 </block>
@@ -11594,7 +11555,7 @@ kind of free
 <block id="1433" name="rScrapIronLogSpike5"> <!-- log spike 5 rScrap -->
 	<property name="Extends" value="scrapIronLogSpike4" />
 	<property name="Damage" value="7" />
-	<property name="Damage_received" value="5" />
+	<property name="Damage_received" value="2.5" />
 	<property name="Texture" value="352" />
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="steelLogSpike6" />

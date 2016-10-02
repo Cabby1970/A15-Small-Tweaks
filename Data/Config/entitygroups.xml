@@ -16,6 +16,7 @@
 	</entitygroup>
 	
 	<entitygroup name="ZombiesNight">
+	
 		<entity name="spiderzombie"/>
 		<entity name="zombieBoe"/>
 		<entity name="zombieJoe" />

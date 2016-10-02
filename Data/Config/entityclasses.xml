@@ -24,6 +24,7 @@
 	<property name="SurfaceCategory" value="organic" />
 	<property name="PushFactor" value="5" />
 	<property name="Weight" value="70" />
+	<property name="Immunity" value="ArmorUp" />
 	<property name="ParticleOnDeath" value="blood_death" />
 	<property name="SoundHurt" value="Player_Male/player1painlg" />
 	<property name="SoundHurtSmall" value="Player_Male/player1painsm" />
@@ -43,18 +44,10 @@
 	<property name="DropInventoryBlock" value="cntBackpackDropped" />
 	<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="bottledWater,canChili,firstAidBandage,torch" />
 	<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="bottledWater,canChili,firstAidBandage,torch,keystoneBlock" />
-	<property name="UMA.EquipmentSlot.Head" value="0" param1="male_base_face" param2="male_head" />
-	<property name="UMA.EquipmentSlot.Eyes" value="0" param1="male_base_eyes" param2="unisex_eyes" />
-	<property name="UMA.EquipmentSlot.Hands" value="0" param1="male_base_hands" param2="male_hands" />
-	<property name="UMA.EquipmentSlot.Hair" value="1" param1="male_base_hair" param2="male_base_hair" />
-	<property name="UMA.EquipmentSlot.Chest" value="0" param1="male_base_chest" param2="male_torso" />
-	<property name="UMA.EquipmentSlot.Legs" value="0" param1="male_base_legs" param2="male_torso" />
-	<property name="UMA.EquipmentSlot.Feet" value="0" param1="male_base_feet" param2="male_feet" />
-	<property name="UMA.EquipmentSlot.Back" value="0" param1="unisex_gear_backpack01" param2="unisex_gear_backpack01" />
 	<property name="ExperienceGain" value="300"/>
-	<property name="LegsExplosionDamageMultiplier" value="0"/>
-	<property name="ArmsExplosionDamageMultiplier" value="0"/>
-	<property name="HeadExplosionDamageMultiplier" value="0"/>
+	<property name="LegsExplosionDamageMultiplier" value="1"/>
+	<property name="ArmsExplosionDamageMultiplier" value="1"/>
+	<property name="HeadExplosionDamageMultiplier" value="1"/>
 </entity_class>
 
 <entity_class name="playerFemale" extends="playerMale">
@@ -72,35 +65,6 @@
 	<property name="SoundLandSoft" value="Player_Male/player2LandSoft" />
 	<property name="SoundLandHard" value="Player_Male/player2LandHard" />
 	<property name="SoundPlayerLandThump" value="PlayerLandThump" />
-	<!-- UMA Slots :
- name = name must match the equipment slot name, hair is a special exception.
- value = layer
- param1 = umaMeshName
-		param2 = umaOverlayName  -->
-	<property name="UMA.EquipmentSlot.Head" value="0" param1="female_base_face" param2="female_head" />
-	<property name="UMA.EquipmentSlot.Eyes" value="0" param1="female_base_eyes" param2="unisex_eyes" />
-	<property name="UMA.EquipmentSlot.Face" value="0" param1="female_base_eyelashes" param2="female_eyelashes" />
-	<property name="UMA.EquipmentSlot.Hands" value="0" param1="female_base_hands" param2="female_hands" />
-	<property name="UMA.EquipmentSlot.Hair" value="1" param1="female_base_hair" param2="female_hair_01" />
-	<property name="UMA.EquipmentSlot.Chest" value="0" param1="female_base_chest" param2="female_torso" />
-	<property name="UMA.EquipmentSlot.Legs" value="0" param1="female_base_legs" param2="female_torso" />
-	<property name="UMA.EquipmentSlot.Feet" value="0" param1="female_base_feet" param2="female_feet" />
-	<property name="UMA.EquipmentSlot.Back" value="0" param1="unisex_gear_backpack01" param2="unisex_gear_backpack01" />
-	<!-- Alternate Example, Basic denim clothing
-		<property name="UMA.EquipmentSlot.Head" value="0" param1="female_head" param2="female_head" />
-		<property name="UMA.EquipmentSlot.Eyes" value="0" param1="female_eyes" param2="female_eyes" />
-		<property name="UMA.EquipmentSlot.Face" value="0" param1="female_eyelashes" param2="female_eyelashes" />
-		<property name="UMA.EquipmentSlot.Hands" value="0" param1="female_hands" param2="female_hands" />
-		<property name="UMA.EquipmentSlot.Hair" value="1" param1="female_hair" param2="female_hair_01" />
-		
-		<property name="UMA.EquipmentSlot.Chest" value="0" param1="female_shirt" param2="female_shirt_01" />
-		<property name="UMA.EquipmentSlot.Legs" value="0" param1="female_pants" param2="female_pants_01" />
-		<property name="UMA.EquipmentSlot.Feet" value="0" param1="female_boots" param2="male_boot_02" />
- -->
-	<property name="ExperienceGain" value="300"/>
-	<property name="LegsExplosionDamageMultiplier" value="0"/>
-	<property name="ArmsExplosionDamageMultiplier" value="0"/>
-	<property name="HeadExplosionDamageMultiplier" value="0"/>
 </entity_class>
 
 <!-- ZOMBIES -->
